@@ -22,7 +22,44 @@ Authors: [Cédric Lenoir](mailto:cedric.lenoir@hevs.ch), [Thomas Sterren](mailto
 
 ## Table of Contents
 
-[[_TOC_]]
+<!-- TOC -->
+- [LAB 05: Introduction to Data Storage and Visualisation](#lab-05-introduction-to-data-storage-and-visualisation)
+  - [Table of Contents](#table-of-contents)
+- [Objectives](#objectives)
+- [Why Using a Database in Automation](#why-using-a-database-in-automation)
+- [Environment Overview](#environment-overview)
+  - [Laboratory PC with ctrlX COREVirtual](#laboratory-pc-with-ctrlx-corevirtual)
+- [Set up Virtual ctrlX Core Instance](#set-up-virtual-ctrlx-core-instance)
+- [Install InfluxDB on ctrlX OS](#install-influxdb-on-ctrlx-os)
+  - [Access the ctrlX OS Store](#access-the-ctrlx-os-store)
+  - [Find and Install InfluxDB](#find-and-install-influxdb)
+  - [Configure InfluxDB](#configure-influxdb)
+    - [Start Configuration](#start-configuration)
+    - [Basic Configuration](#basic-configuration)
+    - [Store API Token](#store-api-token)
+    - [Database in 'Data Explorer'](#database-in-data-explorer)
+    - [Access InfluxDB interface](#access-influxdb-interface)
+    - [Optional: Network Configuration for CtrlX COREVirtual](#optional-network-configuration-for-ctrlx-corevirtual)
+  - [Other Setup Topics](#other-setup-topics)
+    - [Set up Data Retention](#set-up-data-retention)
+    - [Create Additional Users and Permissions](#create-additional-users-and-permissions)
+  - [Additional Resources](#additional-resources)
+- [Using Node-RED to push Data into InfluxDB](#using-node-red-to-push-data-into-influxdb)
+  - [Install Node-RED App](#install-node-red-app)
+  - [Node-RED: Install InfluxDB package](#node-red-install-influxdb-package)
+  - [Node-RED: Generate and Push Random Data](#node-red-generate-and-push-random-data)
+    - [Generate Random Environment Sensor Data](#generate-random-environment-sensor-data)
+      - [Deploy and Test Sensor Data Storage](#deploy-and-test-sensor-data-storage)
+    - [Generate Sine Wave Signal](#generate-sine-wave-signal)
+- [Using Node-RED to Fetch Data from InfluxDB](#using-node-red-to-fetch-data-from-influxdb)
+  - [Node-RED: Read Data from InfluxDB](#node-red-read-data-from-influxdb)
+    - [Using Data Explorer to Build Flux Query](#using-data-explorer-to-build-flux-query)
+- [Install Grafana on ctrlX OS](#install-grafana-on-ctrlx-os)
+  - [Install _IoT Dashboard_ App](#install-iot-dashboard-app)
+    - [Next Steps](#next-steps)
+  - [Configure New _Data Source_](#configure-new-data-source)
+  - [Create First Dashboard](#create-first-dashboard)
+<!-- TOC -->
 
 # Objectives
 Understand the basic usage of a time-series database and how to access and visualise the stored data.
