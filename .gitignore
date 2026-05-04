@@ -1,0 +1,6 @@
+# Codesys files
+*.bootinfo
+*.bootinfo_guids
+*.precompilecache
+*.compileinfo
+**/.idea
