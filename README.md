@@ -101,6 +101,37 @@ Let's go on by starting the `ctrlX WORKS` application and set up a virtual `ctrl
 # Set up Virtual ctrlX Core Instance
 In the `ctrlX WORKS` application select the `Devices` view and create a new virtual `ctrlX Core` instance by clicking on the ![➕](img/ctrlx-works-devices-add-01.png) button in the upper-right corner. Select _Create a new ctrlX COREvirtual_ and name the new instance for example `VirtualControl-InfluxDB`.
 
+> Note: In case there is already an instance with the same, delete it first and create a new one.
+
+## Virtual ctrX Core - Network Configuration
+
+_CtrlX COREVirtual_ is based on [QEMU](https://www.qemu.org/), an operating system emulator. Per default, the system runs in an isolated environment and does not have access to the Internet, nor can we access a software running inside the environment via Ethernet. This limitation can be altered in the settings.  
+
+Click on the pencil icon to change the configuration. Click on the _Extended_ tab and change the configuration to **Port forwarding**. This allows applications running inside the virtual environment to reach the other world.
+
+Save the configuration. 
+
+You can now start the ctrlX Core instance (ctrlX OS) and after startup access it via the https://127.0.0.1:8443 link.
+
+### Optional - Forwarding an Additional Port (ex. 8086)
+
+In case you having problems to reach InfluxDB via port 8086 you may need to enable port forwarding for this port. This can be done in the _ctrlX COREVirtual_ settings:
+
+![](img/ctrlx-core-virtual-01-port-forwarding-for-influxdb-app.png)
+
+- Stop the running ctrlX OS instance
+- Press the pencil icon to enter the Settings for _ctrlX COREVirtual_ 
+- Select the Extended tab
+- Change network configuration (from _Network Adapter_) to _Port forwarding_
+- Extend the _Port forwarding_ field with `8086:8086`
+
+Adding this entry means _"Forward the internal port 8086 and expose it to the accessible interface on port 8086"_
+   
+> Note: The _Port forwarding_ field contains comma separated entries!
+
+> Note: In case the port `8086` is already used on the laboratory PC you need to take another port. When taking for example the port `8090` you need to change the expression to `8090:8086`.
+
+## Start Virtual ctrlX Core Instance
 Start then the instance using the ▶️ icon in the _Actions_ column. Wait a bit until the application properly started and click then on the `VirtualControl-InfluxDB` to get forwarded to its webinterface. You can log in with the following default credentials:
 
 - _Username_: **boschrexroth**
@@ -137,7 +168,7 @@ Click the _Install_ button. After installation the application shows up in the _
 
 The InfluxDB is now running on your ctrlX OS and you have a new _InfluxDB_ entry in the main navigation menu.
 
-> Note: InfluxDB also provides a web interface to configure and access the database. Example: https://127.0.0.1:8443/influxdb or https://127.0.0.1/influxdb
+> Note: InfluxDB also provides a web interface to configure and access the database. Example: https://127.0.0.1:8443/influxdb (or https://127.0.0.1/influxdb)
 
 ## Configure InfluxDB
 
@@ -187,26 +218,6 @@ After the _initial user_ configuration you can navigate to the InfluxDB web inte
 ![ctrlX OS - InfluxDB View](img/ctrlx-os-app-influxdb-01.png)
 
 For the login you need to provide the user credentials you configured during _initial user_ setup.
-
-### Optional: Network Configuration for CtrlX COREVirtual
-
-_CtrlX COREVirtual_ is based on [QEMU](https://www.qemu.org/), an operating system emulator. Per default, the system runs in an isolated environment and does not have access to the Internet, nor can we access a software running inside the environment via Ethernet. This limitation can be altered in the settings.  
-
-In case you having problems to reach InfluxDB via port 8086 you may need to enable port forwarding for this port. This can be done in the _ctrlX COREVirtual_ settings:
-
-![](img/ctrlx-core-virtual-01-port-forwarding-for-influxdb-app.png)
-
-- Stop the running ctrlX OS instance
-- Press the pencil icon to enter the Settings for _ctrlX COREVirtual_ 
-- Select the Extended tab
-- Change network configuration (from _Network Adapter_) to _Port forwarding_
-- Extend the _Port forwarding_ field with `8086:8086`
-
-Adding this entry means _"Forward the internal port 8086 and expose it to the accessible interface on port 8086"_
-   
-> Note: The _Port forwarding_ field contains comma separated entries!
-
-> Note: In case the port `8086` is already used on the laboratory PC you need to take another port. When taking for example the port `8090` you need to change the expression to `8090:8086`.
 
 ## Other Setup Topics
 Remains to mention some other topics you might consider to do, but we do not cover in this document:
@@ -346,7 +357,7 @@ Then you can check if the data is generated correctly by adding a _debug node_ t
 
 ![](img/node-red-debug-view-output-01.svg)
 
-Open the InfluxDB web interface in the browser (ex. http://127.0.0.1/influxdb) and check in the _Data Explorer_ if the _environment_sensor_ table is present in the _automation_data_ bucket and contains the fields _humidity_ and _temperature_:
+Open the InfluxDB web interface in the browser (ex. http://127.0.0.1:8443/influxdb) and check in the _Data Explorer_ if the _environment_sensor_ table is present in the _automation_data_ bucket and contains the fields _humidity_ and _temperature_:
 
 ![](img/influxdb-data-explorer-01.svg)
 
@@ -471,7 +482,7 @@ Click the _Install_ button. After installation the application shows up in the _
 
 Grafana is now running on your ctrlX OS and you have a new _IoT Dashboard_ entry in the main navigation menu.
 
-> Note: The _IoT Dashboard_ also provides a web interface to configure and access the dashboard. Example: https://127.0.0.1:8443/grafana or https://127.0.0.1/grafana
+> Note: The _IoT Dashboard_ also provides a web interface to configure and access the dashboard. Example: https://127.0.0.1:8443/grafana (or https://127.0.0.1/grafana)
 
 ![](img/grafana-01-home.png)
 
