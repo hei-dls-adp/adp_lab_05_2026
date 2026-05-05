@@ -103,17 +103,17 @@ Let's go on by starting the `ctrlX WORKS` application and set up a virtual `ctrl
 # Set up Virtual ctrlX Core Instance
 In the `ctrlX WORKS` application select the `Devices` view and create a new virtual `ctrlX Core` instance by clicking on the ![➕](img/ctrlx-works-devices-add-01.png) button in the upper-right corner. Select _Create a new ctrlX COREvirtual_ and name the new instance for example `VirtualControl-InfluxDB`.
 
-> Note: In case there is already an instance with the same, delete it first and create a new one.
+> Note: In case there is already an instance with the same name, delete it first and create a new one.
 
 ## Virtual ctrX Core - Network Configuration
 
 _CtrlX COREVirtual_ is based on [QEMU](https://www.qemu.org/), an operating system emulator. Per default, the system runs in an isolated environment and does not have access to the Internet, nor can we access a software running inside the environment via Ethernet. This limitation can be altered in the settings.  
 
-Click on the pencil icon to change the configuration. Click on the _Extended_ tab and change the configuration to **Port forwarding**. This allows applications running inside the virtual environment to reach the other world.
+Click on the pencil icon to change the configuration. Choose the _Extended_ tab and change the configuration from _Network adapter_  to **Port forwarding**. This allows applications running inside the virtual environment to reach the other world.
 
 Save the configuration. 
 
-You can now start the ctrlX Core instance (ctrlX OS) and after startup access it via the https://127.0.0.1:8443 link.
+You can now start the ctrlX Core instance (ctrlX OS) by clicking on the ![Start](img/ctrlx-works-devices-start-01.png) button and after startup access it via the https://127.0.0.1:8443 link.
 
 ### Optional - Forwarding an Additional Port (ex. 8086)
 
