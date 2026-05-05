@@ -113,7 +113,7 @@ Click on the pencil icon to change the configuration. Choose the _Extended_ tab 
 
 Save the configuration. 
 
-You can now start the ctrlX Core instance (ctrlX OS) by clicking on the ![Start](img/ctrlx-works-devices-start-01.png) button and after startup access it via the https://127.0.0.1:8443 link.
+You can now start the ctrlX Core instance (ctrlX OS) by clicking on the ![Start](img/ctrlx-works-devices-start-01.png) button and (after startup) access it via the https://127.0.0.1:8443 link.
 
 ### Optional - Forwarding an Additional Port (ex. 8086)
 
