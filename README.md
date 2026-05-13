@@ -359,7 +359,7 @@ Then you can check if the data is generated correctly by adding a _debug node_ t
 
 ![](img/node-red-debug-view-output-01.svg)
 
-Open the InfluxDB web interface in the browser (ex. http://127.0.0.1:8443/influxdb) and check in the _Data Explorer_ if the _environment_sensor_ table is present in the _automation_data_ bucket and contains the fields _humidity_ and _temperature_:
+Open the InfluxDB web interface in the browser (ex. https://127.0.0.1:8443/influxdb) and check in the _Data Explorer_ if the _environment_sensor_ table is present in the _automation_data_ bucket and contains the fields _humidity_ and _temperature_:
 
 ![](img/influxdb-data-explorer-01.svg)
 
@@ -526,7 +526,7 @@ Next you need to provide the _database_ name and the _user credentials_. In the 
 ![](img/grafana-add-new-datasource-06-db-details-for-influxql.png)
 
 - **Database**: The name of the bucket
-- **User**: Can be empty. You can enter whatever text you like
+- **User**: You can enter whatever text you like. **Must not be empty**
 - **Password**: The _API token_ provided by InfluxDB
 
 You can test if Grafana is able to reach the InfluxDB server by clicking on the `Save & test` button:
