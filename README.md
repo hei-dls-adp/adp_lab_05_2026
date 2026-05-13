@@ -339,7 +339,7 @@ The enter the information for the InfluxDB server as follows:
 
 - **Name**: A name that best describes the database
 - **Version**: We use InfluxDB version `2.0`
-- **URL**: In case the InfluxDB runs on the local computer: `http://localhost:8006`
+- **URL**: In case the InfluxDB runs on the local computer: `http://localhost:8086`
 - **Token**: The API token you saved into a file
 
 Back on the original configuration window you need to provide the name for the organisation and the bucket:
